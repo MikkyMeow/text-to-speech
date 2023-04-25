@@ -18,7 +18,9 @@ export const App = () => {
       const eng = new SpeechSynthesisUtterance(episode[i].eng);
       const rus = new SpeechSynthesisUtterance(episode[i].rus);
       const eng2 = new SpeechSynthesisUtterance(episode[i].eng);
+      eng.lang = "en";
       rus.lang = "ru";
+      eng2.lang = "en";
       eng.rate = rate;
       eng2.rate = rate2;
       synth.speak(eng);
