@@ -1,0 +1,50 @@
+p,
+body {
+  margin: 0;
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.root {
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.gap {
+  gap: 14px;
+}
+
+.toBottom {
+  margin-top: auto;
+}
+
+input {
+  padding: 20px;
+}
+
+.size20 button {
+  font-size: 20px;
+}
