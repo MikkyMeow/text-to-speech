@@ -82,7 +82,7 @@ export const App = () => {
           </button>
           <button onClick={() => stop()}>Stop</button>
           <button
-            disabled={isPlayed}
+            // disabled={isPlayed}
             id="next"
             onClick={() => setProgress(progress + 1)}
           >
