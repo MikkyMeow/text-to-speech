@@ -5,7 +5,7 @@ import "./App.css";
 const synth = window.speechSynthesis;
 
 export const App = () => {
-  const episode = theWalkingDead.season1.episode1;
+  const episode = theWalkingDead.season1.episode3;
   const [progress, setProgress] = useState(0);
   const [isPlayed, setIsPlayed] = useState(false);
   const [rate, setRate] = useState(1);
