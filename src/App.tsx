@@ -10,18 +10,27 @@ export const App = () => {
   const [isPlayed, setIsPlayed] = useState(false);
   const [rate, setRate] = useState(1);
   const [rate2, setRate2] = useState(1);
+  const [disableRussian, setDisableRussian] = useState(false);
 
   const play = () => {
     setIsPlayed(true);
     for (let i = progress; i < episode.length; i++) {
       const eng = new SpeechSynthesisUtterance(`${episode[i].eng}`);
+      const eng2 = new SpeechSynthesisUtterance(`${episode[i].eng}`);
       const rus = new SpeechSynthesisUtterance(`${episode[i].rus}`);
+      const final = new SpeechSynthesisUtterance("");
       eng.lang = "en";
+      eng2.volume = 0;
       rus.lang = "ru";
       eng.rate = rate;
+      eng2.rate = rate2;
       synth.speak(eng);
-      synth.speak(rus);
-      rus.addEventListener("end", (e) => {
+      synth.speak(eng2);
+      eng.rate = 1;
+      synth.speak(eng);
+      if (!disableRussian) synth.speak(rus);
+      synth.speak(final);
+      final.addEventListener("end", (e) => {
         const next = document.getElementById("next");
         if (next) next.click();
       });
@@ -41,6 +50,14 @@ export const App = () => {
       </div>
       <div className="flex col toBottom">
         <div className="flex row center gap">
+          <div className="flex">
+            <button
+              disabled={isPlayed}
+              onClick={() => setDisableRussian((prev) => !prev)}
+            >
+              {disableRussian ? "Russian off" : "Russian on"}
+            </button>
+          </div>
           <div className="flex">
             <button disabled={isPlayed} onClick={() => setRate(rate - 0.1)}>
               -0.1
