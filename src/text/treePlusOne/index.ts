@@ -1,5 +1,13 @@
 import { ISerial } from "../types";
 import { episode1 } from "./episode1";
+import { episode2 } from "./episode2";
+import { episode3 } from "./episode3";
+import { episode4 } from "./episode4";
+import { episode5 } from "./episode5";
+import { episode6 } from "./episode6";
+import { episode7 } from "./episode7";
+import { episode8 } from "./episode8";
+import { episode9 } from "./episode9";
 import { episode10 } from "./episode10";
 import { episode11 } from "./episode11";
 import { episode12 } from "./episode12";
@@ -10,19 +18,11 @@ import { episode16 } from "./episode16";
 import { episode17 } from "./episode17";
 import { episode18 } from "./episode18";
 import { episode19 } from "./episode19";
-import { episode2 } from "./episode2";
 import { episode20 } from "./episode20";
 import { episode21 } from "./episode21";
 import { episode22 } from "./episode22";
 import { episode23 } from "./episode23";
 import { episode24 } from "./episode24";
-import { episode3 } from "./episode3";
-import { episode4 } from "./episode4";
-import { episode5 } from "./episode5";
-import { episode6 } from "./episode6";
-import { episode7 } from "./episode7";
-import { episode8 } from "./episode8";
-import { episode9 } from "./episode9";
 
 export const threePlusOne: ISerial = {
   name: "Three Plus One",
