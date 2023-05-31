@@ -16,6 +16,7 @@ export const Player: React.FC<IProps> = ({ subtitles }) => {
 
   const play = () => {
     const eng = new SpeechSynthesisUtterance(subtitles[currentIndex].eng);
+    eng.lang = "en";
     const rus = new SpeechSynthesisUtterance(subtitles[currentIndex].rus);
     rus.lang = "ru";
     synth.speak(eng);
