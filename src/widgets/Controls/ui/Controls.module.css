@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.root button {
+  padding: 8px 12px;
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+}
+
+.range {
+  width: calc(100vw - 40px);
+}
+
+.mainButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.fontSize {
+  align-items: center;
+  align-self: flex-start;
+  display: flex;
+  gap: 12px;
+}

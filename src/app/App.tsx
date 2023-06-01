@@ -1,24 +1,18 @@
-import React, { useState } from "react";
-import "./App.css";
-import { Player } from "./components/Player/Player";
-import { ISubtitle } from "./text/types";
-import { SerialsList } from "./components/SerialsList/SerialsList";
+import { useState } from "react";
+import { IEpisode } from "../text/types";
+import { Player } from "widgets/Player";
+import { SerialsList } from "widgets/SerialsList";
 
 function App() {
-  const [subtitles, setSubtitles] = useState<ISubtitle[] | null>(null);
-  const [episodeName, setEpisodeName] = useState("");
+  const [episode, setEpisode] = useState<IEpisode | null>(null);
 
   return (
     <>
-      {!subtitles ? (
-        <SerialsList
-          setSubtitles={setSubtitles}
-          setEpisodeName={setEpisodeName}
-        />
+      {!episode ? (
+        <SerialsList setSubtitles={setEpisode} />
       ) : (
         <>
-          <h1>{episodeName}</h1>
-          <Player subtitles={subtitles} />
+          <Player episode={episode} />
         </>
       )}
     </>
