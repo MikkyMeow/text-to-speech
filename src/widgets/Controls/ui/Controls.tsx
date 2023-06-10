@@ -8,6 +8,7 @@ interface IControlsProps {
   pause: () => void;
   setHash: () => void;
   setFontSize: (str: "dec" | "inc") => void;
+  setEnglishSpeed: (str: "dec" | "inc") => void;
   showRussian: () => void;
   setBreath: () => void;
 }
@@ -19,6 +20,7 @@ export const Controls: FC<IControlsProps> = ({
   pause,
   setHash,
   setFontSize,
+  setEnglishSpeed,
   showRussian,
   setBreath,
 }) => {
@@ -38,6 +40,11 @@ export const Controls: FC<IControlsProps> = ({
         Font Size:
         <button onClick={() => setFontSize("dec")}>-</button>
         <button onClick={() => setFontSize("inc")}>+</button>
+      </div>
+      <div className={styles.fontSize}>
+        English speed:
+        <button onClick={() => setEnglishSpeed("dec")}>-</button>
+        <button onClick={() => setEnglishSpeed("inc")}>+</button>
       </div>
       <div>
         <div className={styles.values}>

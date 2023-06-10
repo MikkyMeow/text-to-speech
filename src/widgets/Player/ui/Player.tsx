@@ -14,6 +14,7 @@ export const Player: React.FC<IProps> = ({ episode }) => {
   const { subtitles, name } = episode;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fontSize, setFontSize] = useState(20);
+  const [englishSpeed, setEnglishSpeed] = useState(1);
   const [showRussian, setShowRussian] = useState(true);
   const [isBreath, setIsBreath] = useState(true);
 
@@ -26,6 +27,7 @@ export const Player: React.FC<IProps> = ({ episode }) => {
     const end = new SpeechSynthesisUtterance("");
 
     eng.lang = "en";
+    eng.rate = englishSpeed;
     breath.volume = 0;
     rus.lang = "ru";
 
@@ -77,6 +79,11 @@ export const Player: React.FC<IProps> = ({ episode }) => {
         setHash={() => setHash(getHash())}
         setFontSize={(str) =>
           str === "dec" ? setFontSize(fontSize - 1) : setFontSize(fontSize + 1)
+        }
+        setEnglishSpeed={(str) =>
+          str === "dec"
+            ? setEnglishSpeed(englishSpeed - 0.1)
+            : setEnglishSpeed(englishSpeed + 0.1)
         }
         showRussian={() => setShowRussian((prev) => !prev)}
         setBreath={() => setIsBreath((prev) => !prev)}
